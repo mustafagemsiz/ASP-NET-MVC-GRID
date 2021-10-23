@@ -1,0 +1,36 @@
+﻿@model MVC_GRID.Models.User
+@{
+    ViewBag.Title = "Yeni Ekle";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Yeni Kullanıcı Ekle</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_name"><i class="glyphicon glyphicon-user"></i></span>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Adınızı Giriniz", aria_describedy = "txt_name" })
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_surname"><i class="glyphicon glyphicon-user"></i></span>
+        @Html.TextBoxFor(m => m.Surname, new { @class = "form-control", placeholder = "Soyadınızı Giriniz", aria_describedy = "txt_surname" })
+    </div>
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_age"><i class="glyphicon glyphicon-time"></i></span>
+        @Html.TextBoxFor(m => m.Age, new { @class = "form-control", placeholder = "Yaşınızı Giriniz", aria_describedy = "txt_age" })
+    </div>
+    <br />
+
+    <div class="input-group">
+        <span class="input-group-addon" id="txt_country"><i class="glyphicon glyphicon-globe"></i></span>
+        @Html.DropDownListFor(m => m.Country.Id, (List<SelectListItem>)ViewBag.countryList, new { @class = "form-control", aria_describedy = "txt_country" })
+    </div>
+    <br />
+    <input type="submit" class="btn btn-success" value="Kaydet" />
+}
+
+
