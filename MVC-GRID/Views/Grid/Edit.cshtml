@@ -1,13 +1,16 @@
 ﻿@model MVC_GRID.Models.User
+
 @{
-    ViewBag.Title = "Yeni Ekle";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2 style="text-align:center; font-family:'Times New Roman', Times, serif; margin:25px; ">Yeni Kullanıcı Ekle</h2>
+
+<h2 style="text-align:center; font-family:'Times New Roman', Times, serif; margin:25px; ">Kullanıcı Düzenle</h2>
 
 @using (Html.BeginForm())
 {
+    @Html.HiddenFor(m=>m.Id)
     <div class="input-group">
         <span class="input-group-addon" id="txt_name"><i class="glyphicon glyphicon-user"></i></span>
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Adınızı Giriniz", aria_describedy = "txt_name" })
@@ -32,5 +35,3 @@
     <br />
     <input type="submit" class="btn btn-success" value="Kaydet" />
 }
-
-
